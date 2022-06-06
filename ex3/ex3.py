@@ -4,6 +4,8 @@ def permutations(iterable, starter='', into=[]):
         into.append(tuple([l for l in full_permutation]))
         return iterable
     for index,letter in enumerate(iterable):
+        # abc 
+        # bc 
         remainString = iterable[:index] + iterable[index+ 1:: ]
         starter_str = f'{starter}{letter}'
         permutations(remainString, starter_str, into)
@@ -11,8 +13,11 @@ def permutations(iterable, starter='', into=[]):
     return into
 
 
-s = 'abc'
+if __name__ == '__main__':
+    s = 'abc'
+
+    # s = 'a' -> a  11
 
 
-pr = permutations('abcd')
-print(pr)
+    pr = permutations('abc')
+    print(pr)
